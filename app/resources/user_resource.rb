@@ -18,5 +18,4 @@ class UserResource < ApplicationResource
 
   many_to_many :films,
                resource: MovieResource
-
 end
