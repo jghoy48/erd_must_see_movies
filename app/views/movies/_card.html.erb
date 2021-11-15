@@ -1,0 +1,66 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Movie #<%= movie.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Movie photo</dt>
+      <!-- Display movie_photo start -->
+      <dd><%= movie.movie_photo %></dd>
+      <!-- Display movie_photo end -->
+
+      <dt>Movie title</dt>
+      <!-- Display movie_title start -->
+      <dd><%= movie.movie_title %></dd>
+      <!-- Display movie_title end -->
+
+      <dt>Release year</dt>
+      <!-- Display release_year start -->
+      <dd><%= movie.release_year %></dd>
+      <!-- Display release_year end -->
+
+      <dt>Duration</dt>
+      <!-- Display duration start -->
+      <dd><%= movie.duration %></dd>
+      <!-- Display duration end -->
+
+      <dt>Movie description</dt>
+      <!-- Display movie_description start -->
+      <dd><%= movie.movie_description %></dd>
+      <!-- Display movie_description end -->
+
+      <dt>Director</dt>
+      <!-- Display director_id start -->
+      <dd><%= movie.director_id %></dd>
+      <!-- Display director_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back movie, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link movie start -->
+      <div class="col">
+        <%= link_to edit_movie_url(movie), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link movie end -->
+
+      <!-- Delete link movie start -->
+      <div class="col">
+        <%= link_to movie, method: :delete, data: { confirm: "Do you really want to delete this movie?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link movie end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(movie.updated_at) %> ago
+  </div>
+</div>
