@@ -1,0 +1,109 @@
+<% was_validated = actor.errors.any? %>
+
+<%= form_with(model: actor, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for actor_name start -->
+  <div class="form-group">
+    <% actor_name_class = "form-control" %>
+    <% actor_name_was_invalid = actor.errors.include?(:actor_name) %>
+
+    <% if was_validated %>
+      <% if actor_name_was_invalid %>
+        <% actor_name_class << " is-invalid" %>
+      <% else %>
+        <% actor_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :actor_name %>
+    <!-- Input for actor_name start -->
+    <%= f.text_field :actor_name, class: actor_name_class, placeholder: "Enter actor name" %>
+    <!-- Input for actor_name end -->
+    <% if actor_name_was_invalid %>
+      <% actor.errors.full_messages_for(:actor_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for actor_name end -->
+  <!-- Label and input for actor_pic start -->
+  <div class="form-group">
+    <% actor_pic_class = "form-control" %>
+    <% actor_pic_was_invalid = actor.errors.include?(:actor_pic) %>
+
+    <% if was_validated %>
+      <% if actor_pic_was_invalid %>
+        <% actor_pic_class << " is-invalid" %>
+      <% else %>
+        <% actor_pic_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :actor_pic %>
+    <!-- Input for actor_pic start -->
+    <%= f.text_field :actor_pic, class: actor_pic_class, placeholder: "Enter actor pic" %>
+    <!-- Input for actor_pic end -->
+    <% if actor_pic_was_invalid %>
+      <% actor.errors.full_messages_for(:actor_pic).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for actor_pic end -->
+  <!-- Label and input for actor_dob start -->
+  <div class="form-group">
+    <% actor_dob_class = "form-control" %>
+    <% actor_dob_was_invalid = actor.errors.include?(:actor_dob) %>
+
+    <% if was_validated %>
+      <% if actor_dob_was_invalid %>
+        <% actor_dob_class << " is-invalid" %>
+      <% else %>
+        <% actor_dob_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :actor_dob %>
+    <!-- Input for actor_dob start -->
+    <%= f.date_select :actor_dob, class: actor_dob_class, placeholder: "Enter actor dob" %>
+    <!-- Input for actor_dob end -->
+    <% if actor_dob_was_invalid %>
+      <% actor.errors.full_messages_for(:actor_dob).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for actor_dob end -->
+  <!-- Label and input for actor_bio start -->
+  <div class="form-group">
+    <% actor_bio_class = "form-control" %>
+    <% actor_bio_was_invalid = actor.errors.include?(:actor_bio) %>
+
+    <% if was_validated %>
+      <% if actor_bio_was_invalid %>
+        <% actor_bio_class << " is-invalid" %>
+      <% else %>
+        <% actor_bio_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :actor_bio %>
+    <!-- Input for actor_bio start -->
+    <%= f.text_field :actor_bio, class: actor_bio_class, placeholder: "Enter actor bio" %>
+    <!-- Input for actor_bio end -->
+    <% if actor_bio_was_invalid %>
+      <% actor.errors.full_messages_for(:actor_bio).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for actor_bio end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
