@@ -16,7 +16,7 @@
 
     <%= f.label :movie_photo %>
     <!-- Input for movie_photo start -->
-    <%= f.text_field :movie_photo, class: movie_photo_class, placeholder: "Enter movie photo" %>
+    <%= f.file_field :movie_photo, class: "form-control" %>
     <!-- Input for movie_photo end -->
     <% if movie_photo_was_invalid %>
       <% movie.errors.full_messages_for(:movie_photo).each do |message| %>

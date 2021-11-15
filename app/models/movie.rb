@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  mount_uploader :movie_photo, MoviePhotoUploader
+
   # Direct associations
 
   belongs_to :director

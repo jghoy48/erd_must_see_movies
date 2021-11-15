@@ -42,7 +42,7 @@
 
     <%= f.label :director_pic %>
     <!-- Input for director_pic start -->
-    <%= f.text_field :director_pic, class: director_pic_class, placeholder: "Enter director pic" %>
+    <%= f.file_field :director_pic, class: "form-control" %>
     <!-- Input for director_pic end -->
     <% if director_pic_was_invalid %>
       <% director.errors.full_messages_for(:director_pic).each do |message| %>

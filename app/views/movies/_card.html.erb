@@ -7,7 +7,9 @@
     <dl class="mb-1">
       <dt>Movie photo</dt>
       <!-- Display movie_photo start -->
-      <dd><%= movie.movie_photo %></dd>
+      <dd>
+        <%= cl_image_tag @movie.movie_photo, class: "img-fluid" %>
+      </dd>
       <!-- Display movie_photo end -->
 
       <dt>Movie title</dt>

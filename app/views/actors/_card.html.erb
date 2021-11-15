@@ -12,7 +12,9 @@
 
       <dt>Actor pic</dt>
       <!-- Display actor_pic start -->
-      <dd><%= actor.actor_pic %></dd>
+      <dd>
+        <%= cl_image_tag @actor.actor_pic, class: "img-fluid" %>
+      </dd>
       <!-- Display actor_pic end -->
 
       <dt>Actor dob</dt>

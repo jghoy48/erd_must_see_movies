@@ -12,7 +12,9 @@
 
       <dt>Director pic</dt>
       <!-- Display director_pic start -->
-      <dd><%= director.director_pic %></dd>
+      <dd>
+        <%= cl_image_tag @director.director_pic, class: "img-fluid" %>
+      </dd>
       <!-- Display director_pic end -->
 
       <dt>Director dob</dt>

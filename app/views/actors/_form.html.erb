@@ -42,7 +42,7 @@
 
     <%= f.label :actor_pic %>
     <!-- Input for actor_pic start -->
-    <%= f.text_field :actor_pic, class: actor_pic_class, placeholder: "Enter actor pic" %>
+    <%= f.file_field :actor_pic, class: "form-control" %>
     <!-- Input for actor_pic end -->
     <% if actor_pic_was_invalid %>
       <% actor.errors.full_messages_for(:actor_pic).each do |message| %>
